@@ -23,9 +23,9 @@ class ChatGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2, // Set the number of columns in the grid
+        crossAxisCount: 8,
       ),
-      itemCount: 10, // Set the number of items in the grid
+      itemCount: 10,
       itemBuilder: (context, index) {
         return ChatItem(index: index);
       },
@@ -40,15 +40,18 @@ class ChatItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
       margin: EdgeInsets.all(8.0),
-      child: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Center(
-          child: Text(
-            'Chat $index',
-            style: TextStyle(fontSize: 18.0),
-          ),
+      width: 100.0, // Adjust the width as needed
+      height: 100.0, // Adjust the height as needed
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.lightBlue[200],
+      ),
+      child: Center(
+        child: Text(
+          'Chat $index',
+          style: TextStyle(fontSize: 14.0),
         ),
       ),
     );
